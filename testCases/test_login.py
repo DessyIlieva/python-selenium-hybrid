@@ -1,34 +1,34 @@
-import pytest
-from selenium import webdriver
 from pageObjects.LoginPage import LoginPage
-from datetime import datetime
-
+from utilities.readProperties import ReadConfig
+from utilities.customLogger import LogGen
 
 class Test_001_Login:
-    baseURL = "http://bookswappers.pythonanywhere.com/users/login"
-    usernameData = "test2"
-    passwordData = "lotlorien"
+    baseURL = ReadConfig.getApplicationURL()
+    usernameData = ReadConfig.getUsername()
+    passwordData = ReadConfig.getPassword()   
+    logger = LogGen.loggen()
 
     
     def test_userLoggedOut(self, setup):
-        self.driver = setup
-        self.driver.maximize_window()        
+        self.logger.info("########## Test_001_Login ##########")
+        self.logger.info("########## Verifying User is Logged Out ##########")
+        self.driver = setup            
         self.driver.get(self.baseURL)
         self.lp=LoginPage(self.driver)
 
         # Verify Add Book button is NOT visible
-        if self.lp.addBookButtonPresent():
+        if not self.lp.addBookButtonPresent():
+            self.logger.info("########## User is Logged Out Test Passed Successfully ##########")
             assert True
-            self.driver.close()
         else:
             self.driver.save_screenshot(".\\Screenshots\\" + "test_userLoggedOut.png")
-            self.driver.close()
+            self.logger.error("########## User is Logged Out Test Failed ##########")
             assert False
         
 
     def test_userLogin(self, setup):
+        self.logger.info("########## Verifying User Login ##########")
         self.driver = setup
-        self.driver.maximize_window()
         self.driver.get(self.baseURL)
         self.lp=LoginPage(self.driver)
         self.lp.setUsername(self.usernameData)
@@ -37,10 +37,10 @@ class Test_001_Login:
 
         # Verify Add Book button is visible
         if self.lp.addBookButtonPresent():
-            self.driver.close()
+            self.logger.info("########## User Login Test Passed Successfully ##########")
             assert True
         else:        
             self.driver.save_screenshot(".\\Screenshots\\" + "test_userLogin.png")
-            self.driver.close()
+            self.logger.error("########## User Login Test Failed ##########")
             assert False
         

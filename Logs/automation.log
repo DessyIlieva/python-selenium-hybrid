@@ -1,0 +1,11 @@
+2023-01-10 18:56:29,536 - WDM - INFO - ====== WebDriver manager ======
+2023-01-10 18:56:30,158 - WDM - INFO - Get LATEST chromedriver version for google-chrome 108.0.5359
+2023-01-10 18:56:30,855 - WDM - INFO - Driver [C:\Users\Dessy\.wdm\drivers\chromedriver\win32\108.0.5359\chromedriver.exe] found in cache
+2023-01-10 18:56:32,157 - root - INFO - ########## Test_001_Login ##########
+2023-01-10 18:56:32,157 - root - INFO - ########## Verifying User is Logged Out ##########
+2023-01-10 18:56:33,017 - root - INFO - ########## User is Logged Out Test Passed Successfully ##########
+2023-01-10 18:56:35,144 - WDM - INFO - ====== WebDriver manager ======
+2023-01-10 18:56:35,764 - WDM - INFO - Get LATEST chromedriver version for google-chrome 108.0.5359
+2023-01-10 18:56:36,431 - WDM - INFO - Driver [C:\Users\Dessy\.wdm\drivers\chromedriver\win32\108.0.5359\chromedriver.exe] found in cache
+2023-01-10 18:56:37,655 - root - INFO - ########## Verifying User Login ##########
+2023-01-10 18:56:39,635 - root - INFO - ########## User Login Test Passed Successfully ##########
