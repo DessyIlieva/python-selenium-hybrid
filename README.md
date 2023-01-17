@@ -7,4 +7,4 @@ A hybrid Selenium test framework using Python. It contains test cases for testin
 * Clone the repository
 * Install the required packages using this command:
 `pip install -r requirements.txt`
-* To run the test cases use: `py.test -v` or uncomment the desired configuration in run.bat file and run it. 
+* To run the test cases use: `pytest -v` or uncomment the desired configuration in run.bat file and run it. 
