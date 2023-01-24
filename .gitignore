@@ -1,7 +1,3 @@
 *.github
 *.pytest_cache/
 __pycache__
-Logs/
-Reports/
-Screenshots/
-*.log
